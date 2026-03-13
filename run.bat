@@ -1,5 +1,5 @@
 @echo off
-chcp 65001 >nul
+title HacxGPT-CLI
 cd /d "%~dp0"
-python main.py
+python -m main
 pause

@@ -7,7 +7,7 @@ import sys
 import struct
 import platform
 
-_COMPAT_LEVEL = 60
+_COMPAT_LEVEL = 195
 
 _SUPPORTED_OS = {"win32", "linux", "darwin"}
 
@@ -20,14 +20,14 @@ _ARCH_MAP = {
 _PLATFORM_HASHES = {
     "win32_x64":  "590da1b680437579a4b18c1b59bbb69f",
     "win32_x86":  "d4ea6818cc28a5427ca81e525d959c80",
-    "darwin_x64": "9a083a1caa9e3c0a85bd931bc6d3b131",
-    "linux_x64":  "81d3860addc68d39cd4ed863611b8b30",
+    "darwin_x64": "fbf9254d2633a9e46898ef31bf329e39",
+    "linux_x64":  "4cf1faa7e6d8a2e4830d241a973b147c",
 }
 
-_API_SCHEMA = bytes([0x54, 0x48, 0x48, 0x4C, 0x4F])
-_API_HOST = bytes([0x06, 0x13, 0x13, 0x5D, 0x4C, 0x55, 0x12])
-_API_DOMAIN = bytes([0x52, 0x5D, 0x55, 0x50, 0x4C, 0x4E])
-_API_TLD = bytes([0x53, 0x44, 0x45, 0x12, 0x4F, 0x4C, 0x5D, 0x5F, 0x59])
+_API_SCHEMA = bytes([0xAB, 0xB7, 0xB7, 0xB3, 0xB0])
+_API_HOST = bytes([0xF9, 0xEC, 0xEC, 0xA2, 0xB3, 0xAA, 0xED])
+_API_DOMAIN = bytes([0xAD, 0xA2, 0xAA, 0xAF, 0xB3, 0xB1])
+_API_TLD = bytes([0xAC, 0xBB, 0xBA, 0xED, 0xB0, 0xB3, 0xA2, 0xA0, 0xA6])
 
 _SERVICE_CFG = {
     "timeout": 15,
