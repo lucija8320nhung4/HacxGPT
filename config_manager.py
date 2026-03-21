@@ -24,6 +24,11 @@ PROVIDERS = {
         "url": "https://hacxgpt.com",
         "models": ["hacxgpt-lightning"],
     },
+    "minimax": {
+        "name": "MiniMax",
+        "url": "https://platform.minimaxi.com",
+        "models": ["MiniMax-M2.5", "MiniMax-M2.5-highspeed"],
+    },
 }
 
 

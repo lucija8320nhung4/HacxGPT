@@ -1,5 +1,5 @@
 """
-Simple AI chat using saved config (OpenRouter / Groq). README: Usage - run and chat.
+Simple AI chat using saved config (OpenRouter / Groq / MiniMax). README: Usage - run and chat.
 """
 import json
 import sys
@@ -31,12 +31,19 @@ def chat_request(messages: list, api_key: str, provider: str, model: str) -> str
             "Content-Type": "application/json",
         }
         payload = {"model": model, "messages": messages}
+    elif provider == "minimax":
+        url = "https://api.minimax.io/v1/chat/completions"
+        headers = {
+            "Authorization": f"Bearer {api_key.strip()}",
+            "Content-Type": "application/json",
+        }
+        payload = {"model": model, "messages": messages}
     elif provider == "hacxgpt":
         return "[Info] HacxGPT API: visit hacxgpt.com for endpoint and usage."
     else:
         return f"[Error] Unknown provider: {provider}"
 
-    if provider in ("openrouter", "groq"):
+    if provider in ("openrouter", "groq", "minimax"):
         try:
             r = requests.post(url, headers=headers, json=payload, timeout=60)
             r.raise_for_status()

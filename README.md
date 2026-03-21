@@ -38,6 +38,7 @@ $$ |  $$ |\$$$$$$$ |\$$$$$$$\ $$  /\$$\ \$$$$$$  |$$ |        $$ |
 | **API Docs** | [hacx-gpt.github.io/Docs](https://hacx-gpt.github.io/Docs/) |
 | **OpenRouter Keys** | [openrouter.ai/keys](https://openrouter.ai/keys) |
 | **Groq Keys** | [console.groq.com/keys](https://console.groq.com/keys) |
+| **MiniMax Keys** | [platform.minimaxi.com](https://platform.minimaxi.com) |
 | **Contact** | [contact@hacxgpt.com](mailto:contact@hacxgpt.com) |
 
 ---
@@ -50,7 +51,7 @@ $$ |  $$ |\$$$$$$$ |\$$$$$$$\ $$  /\$$\ \$$$$$$  |$$ |        $$ |
 
 | Feature | Status |
 |---------|:------:|
-| Multi-provider support (OpenRouter, Groq, HacxGPT) | ✓ |
+| Multi-provider support (OpenRouter, Groq, MiniMax, HacxGPT) | ✓ |
 | Local API key storage (keys never leave your machine) | ✓ |
 | Cross-platform (Windows, Linux, macOS, Termux) | ✓ |
 | One-click dependency installation | ✓ |
@@ -83,6 +84,7 @@ $$ |  $$ |\$$$$$$$ |\$$$$$$$\ $$  /\$$\ \$$$$$$  |$$ |        $$ |
 - **API key** from at least one provider:
   - [OpenRouter](https://openrouter.ai/keys) (recommended, free tier)
   - [Groq](https://console.groq.com/keys) (fast, free tier)
+  - [MiniMax](https://platform.minimaxi.com) (204K context, strong reasoning)
   - [HacxGPT](https://hacxgpt.com) (production models)
 
 ### Installation
@@ -137,6 +139,7 @@ Config is stored at `~/.hacxgpt_cli/config.json` (local only).
 |----------|---------------|---------|
 | `openrouter` | `mimo-v2-flash`, `devstral-2512`, `deepseek-r1t-chimera` | openrouter.ai/keys |
 | `groq` | `kimi-k2-instruct-0905`, `qwen3-32b` | console.groq.com/keys |
+| `minimax` | `MiniMax-M2.5`, `MiniMax-M2.5-highspeed` | platform.minimaxi.com |
 | `hacxgpt` | `hacxgpt-lightning` | hacxgpt.com |
 
 ---
@@ -179,7 +182,7 @@ Select option: 3
 ```
 HacxGPT-CLI/
 ├── main.py              # Launcher & menu logic
-├── chat.py              # AI chat request handler (OpenRouter/Groq)
+├── chat.py              # AI chat request handler (OpenRouter/Groq/MiniMax)
 ├── config_manager.py    # Local config read/write
 ├── requirements.txt     # Python dependencies
 ├── run.bat              # Windows double-click launcher
@@ -218,7 +221,7 @@ Yes. Run `python3 -m main` from the project directory. Ensure Python 3.10+ and d
 <details>
 <summary><b>What models are supported?</b></summary>
 
-OpenRouter: mimo-v2-flash, devstral-2512, glm-4.5-air, kimi-k2, deepseek-r1t-chimera, llama-3.3-70b. Groq: kimi-k2-instruct-0905, qwen3-32b. HacxGPT: hacxgpt-lightning. Use Settings (option 2) to switch.
+OpenRouter: mimo-v2-flash, devstral-2512, glm-4.5-air, kimi-k2, deepseek-r1t-chimera, llama-3.3-70b. Groq: kimi-k2-instruct-0905, qwen3-32b. MiniMax: MiniMax-M2.5, MiniMax-M2.5-highspeed (204K context). HacxGPT: hacxgpt-lightning. Use Settings (option 2) to switch.
 </details>
 
 <details>
